@@ -9,6 +9,7 @@ serve = "uvicorn main:app --reload"
 [packages]
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+pydantic = "*"
 
 [dev-packages]
 
