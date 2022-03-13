@@ -24,10 +24,7 @@ def shutdown():
 @app.post("/datetime")
 async def process_datetime(options: Optional[DatetimeOptions] = None):
     registerCall()
-    if(options and options.alternative_format):
-        return {"datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-    else:
-        return {"datetime": datetime.now().strftime("%Y-%d-%m")}
+    return {"datetime": getDatetime(options and options.alternative_format)}
 
 
 @app.get("/count")
@@ -38,6 +35,13 @@ async def get_count():
 
 def registerCall():
     Counter.registerCall()
+
+
+def getDatetime(alternative_format):
+    if(alternative_format):
+        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    else:
+        return datetime.now().strftime("%Y-%d-%m")
 
 
 def getCount():
