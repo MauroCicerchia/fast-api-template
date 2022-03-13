@@ -9,10 +9,7 @@ counter = 0
 @app.post("/datetime")
 def process_datetime(options: Optional[DatetimeOptions] = None):
     registerCall()
-    if(options and options.alternative_format):
-        return {"datetime": datetime.now().strftime("%Y-%d-%m")}
-    else:
-        return {"datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+    return {"datetime": getDatetime(options and options.alternative_format)}
 
 
 @app.get("/count")
@@ -24,3 +21,13 @@ def get_count():
 def registerCall():
     global counter
     counter += 1
+
+def getDatetime(alternative_format):
+    if(alternative_format):
+        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    else:
+        return datetime.now().strftime("%Y-%d-%m")
+
+
+def getCount():
+    return counter
