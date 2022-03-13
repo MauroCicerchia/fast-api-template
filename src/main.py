@@ -25,9 +25,9 @@ def shutdown():
 async def process_datetime(options: Optional[DatetimeOptions] = None):
     registerCall()
     if(options and options.alternative_format):
-        return {"datetime": datetime.now().strftime("%Y-%d-%m")}
-    else:
         return {"datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+    else:
+        return {"datetime": datetime.now().strftime("%Y-%d-%m")}
 
 
 @app.get("/count")
