@@ -13,8 +13,7 @@ class Counter(Model):
             
     def getCount():
         try:
-            counter = Counter.select().first()
-            print(counter)
+            counter = Counter.get()
             return counter.count
         except Counter.DoesNotExist:
             return 0
