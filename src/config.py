@@ -1,5 +1,6 @@
 from os import environ
 
+
 class DB_CONFIG:
     HOST = environ.get('DB_HOST', 'localhost')
     PORT = environ.get('DB_PORT', '5432')

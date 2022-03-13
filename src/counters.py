@@ -1,5 +1,6 @@
 from database import *
 
+
 class Counter(Model):
     count = IntegerField()
 
@@ -10,7 +11,7 @@ class Counter(Model):
             counter.save()
         except Counter.DoesNotExist:
             Counter.create(count=1)
-            
+
     def getCount():
         try:
             counter = Counter.get()
@@ -24,6 +25,7 @@ class Counter(Model):
     class Meta:
         database = database
         table_name = 'counters'
-        
+
+
 def create_counters_table():
     database.create_tables([Counter])

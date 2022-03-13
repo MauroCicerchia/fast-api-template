@@ -9,10 +9,12 @@ database = PostgresqlDatabase(
     password=DB_CONFIG.PASSWORD
 )
 
+
 def db_startup():
     if database.is_closed():
         database.connect()
-    
+
+
 def db_shutdown():
     if not connection.is_closed():
         connection.close()

@@ -5,10 +5,12 @@ from counters import *
 
 app = FastAPI()
 
+
 @app.on_event(event_type="startup")
 def startup():
     db_startup()
     create_counters_table()
+
 
 @app.on_event(event_type="shutdown")
 def shutdown():
@@ -23,6 +25,7 @@ async def process_datetime(options: Optional[DatetimeOptions] = None):
     else:
         return {"datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 
+
 @app.get("/count")
 async def get_count():
     registerCall()
@@ -31,7 +34,7 @@ async def get_count():
 
 def registerCall():
     Counter.registerCall()
-    
+
+
 def getCount():
     return Counter.getCount()
-
