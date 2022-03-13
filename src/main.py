@@ -3,7 +3,11 @@ from datetime import datetime
 from schemas import *
 from counters import *
 
-app = FastAPI()
+app = FastAPI(
+    title="Ejercicio Mauro Cicerchia",
+    description="Prueba técnica - Marvik",
+    version="0.1.0"
+)
 
 
 @app.on_event(event_type="startup")
