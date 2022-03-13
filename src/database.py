@@ -16,5 +16,5 @@ def db_startup():
 
 
 def db_shutdown():
-    if not connection.is_closed():
-        connection.close()
+    if not database.is_closed():
+        database.close()
