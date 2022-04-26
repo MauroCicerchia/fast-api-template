@@ -1,4 +1,4 @@
-# Ejercicio Mauro Cicerchia
+# FastAPI template
 
 ## Requisitos
 
@@ -20,12 +20,4 @@ Servir la aplicación usando `pipenv run serve`
 
 ## Documentación
 
-La documentación de la API se encuentra [aquí](https://documenter.getpostman.com/view/9096048/UVsJvmqH)
-
-También puede encontrarse una vez levantada la aplicación, en la ruta `/docs`
-
-## Aclaraciones
-
-Tomé la decisión de persistir el contador de llamadas. En caso de no querer utilizar la base de datos, en la rama `no-db-version` se encuentra otra versión de la aplicación implementada sin base de datos.
-
-Asumí que el contador debía contar llamadas tanto al endpoint de `POST /datetime` como al de `GET /count` según lo que interpreté en la consigna.
+La documentación de la API se encuentra en la ruta `/docs`
